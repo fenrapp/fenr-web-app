@@ -18,10 +18,6 @@
   <a href="https://github.com/fenrapp/bike-protocol-research">Protocol research</a>
 </p>
 
-<p align="center">
-  <img src="./public/assets/dashboard-riding.png" width="92%" alt="FENR live riding dashboard">
-</p>
-
 ## ⚡ About this repository
 
 This repository contains the static product website for FENR. It presents the iPhone and Apple Watch apps through real simulator captures, synthetic bike data and concise explanations of the product.
