@@ -8,7 +8,7 @@ export function MotionController() {
     root.classList.add('motion-ready');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const connection = navigator as Navigator & {
-      connection?: { saveData?: boolean };
+      connection?: { saveData?: boolean; effectiveType?: string };
     };
 
     const revealElements = Array.from(
@@ -50,7 +50,11 @@ export function MotionController() {
       document.querySelectorAll<HTMLVideoElement>('[data-autoplay-video]'),
     );
     const shouldPlayVideo =
-      !reducedMotion.matches && !connection.connection?.saveData;
+      !reducedMotion.matches &&
+      !connection.connection?.saveData &&
+      !['slow-2g', '2g', '3g'].includes(
+        connection.connection?.effectiveType ?? '',
+      );
     const videoObserver = shouldPlayVideo
       ? new IntersectionObserver(
           (entries) => {

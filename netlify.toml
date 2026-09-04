@@ -1,3 +1,10 @@
 [build]
   command = "npm run build"
   publish = "dist/client"
+
+# Only content-fingerprinted media is immutable. HTML and original assets keep
+# Netlify's default revalidation, so future releases cannot get stuck in cache.
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

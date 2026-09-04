@@ -1,0 +1,69 @@
+{
+  "images": {
+    "dashboard-riding": {
+      "src": "/media/dashboard-riding-2622-31124bf79ab7.webp",
+      "srcSet": "/media/dashboard-riding-640-a9146576290b.webp 640w, /media/dashboard-riding-1280-c306fee23e32.webp 1280w, /media/dashboard-riding-2622-31124bf79ab7.webp 2622w"
+    },
+    "dashboard-charging": {
+      "src": "/media/dashboard-charging-2622-73298e46bfcc.webp",
+      "srcSet": "/media/dashboard-charging-640-66bc3414c068.webp 640w, /media/dashboard-charging-1280-e1b5451ab78f.webp 1280w, /media/dashboard-charging-2622-73298e46bfcc.webp 2622w"
+    },
+    "navigation": {
+      "src": "/media/navigation-1800-ed1eda3356c0.webp",
+      "srcSet": "/media/navigation-640-c5fa28493bd7.webp 640w, /media/navigation-1280-73439c069033.webp 1280w, /media/navigation-1800-ed1eda3356c0.webp 1800w"
+    },
+    "dashboard-cards": {
+      "src": "/media/dashboard-cards-720-e127a0331438.webp",
+      "srcSet": "/media/dashboard-cards-360-877607883022.webp 360w, /media/dashboard-cards-480-dfbff9306e99.webp 480w, /media/dashboard-cards-720-e127a0331438.webp 720w"
+    },
+    "battery-health": {
+      "src": "/media/battery-health-720-9403c3cde73d.webp",
+      "srcSet": "/media/battery-health-360-0cab60670b0d.webp 360w, /media/battery-health-480-02179eee031c.webp 480w, /media/battery-health-720-9403c3cde73d.webp 720w"
+    },
+    "battery-cells": {
+      "src": "/media/battery-cells-720-904917888b3a.webp",
+      "srcSet": "/media/battery-cells-360-caf0c6716c06.webp 360w, /media/battery-cells-480-6c029c26e6a5.webp 480w, /media/battery-cells-720-904917888b3a.webp 720w"
+    },
+    "power-modes": {
+      "src": "/media/power-modes-720-38b578e28607.webp",
+      "srcSet": "/media/power-modes-360-b79a84e7508c.webp 360w, /media/power-modes-480-c84c6f3ac7c7.webp 480w, /media/power-modes-720-38b578e28607.webp 720w"
+    },
+    "ride-history": {
+      "src": "/media/ride-history-720-9120c9a1461b.webp",
+      "srcSet": "/media/ride-history-360-b7735d755779.webp 360w, /media/ride-history-480-6f0d75cb6b80.webp 480w, /media/ride-history-720-9120c9a1461b.webp 720w"
+    },
+    "maintenance": {
+      "src": "/media/maintenance-720-aee2f5ea2107.webp",
+      "srcSet": "/media/maintenance-360-8b0951017ed1.webp 360w, /media/maintenance-480-edf017f3eee2.webp 480w, /media/maintenance-720-aee2f5ea2107.webp 720w"
+    },
+    "diagnostics": {
+      "src": "/media/diagnostics-720-156f5623c439.webp",
+      "srcSet": "/media/diagnostics-360-f4fb74698937.webp 360w, /media/diagnostics-480-fdd179b398d2.webp 480w, /media/diagnostics-720-156f5623c439.webp 720w"
+    },
+    "live-activity": {
+      "src": "/media/live-activity-720-0b341ca27d36.webp",
+      "srcSet": "/media/live-activity-360-afb10343360e.webp 360w, /media/live-activity-480-6c415ec0e900.webp 480w, /media/live-activity-720-0b341ca27d36.webp 720w"
+    },
+    "watch-charging": {
+      "src": "/media/watch-charging-416-173dd734fe75.webp",
+      "srcSet": "/media/watch-charging-256-36392ce78ecf.webp 256w, /media/watch-charging-416-173dd734fe75.webp 416w"
+    },
+    "fenr-icon-light": {
+      "src": "/media/fenr-icon-light-256-8c38d976d4fb.webp",
+      "srcSet": "/media/fenr-icon-light-96-54e5b3d24f45.webp 96w, /media/fenr-icon-light-256-8c38d976d4fb.webp 256w"
+    },
+    "fenr-icon-dark": {
+      "src": "/media/fenr-icon-dark-256-c50f473351ab.webp",
+      "srcSet": "/media/fenr-icon-dark-96-55f01002aa19.webp 96w, /media/fenr-icon-dark-256-c50f473351ab.webp 256w"
+    },
+    "trail": {
+      "src": "/media/trail-922-052c0d65f361.webp",
+      "srcSet": "/media/trail-640-fe47285060b0.webp 640w, /media/trail-922-052c0d65f361.webp 922w"
+    },
+    "fenr-ride-loop-poster-landscape": {
+      "src": "/media/fenr-ride-loop-poster-landscape-1280-0b992cf726c3.webp",
+      "srcSet": "/media/fenr-ride-loop-poster-landscape-1280-0b992cf726c3.webp 1280w"
+    }
+  },
+  "videoSrc": "/media/fenr-ride-loop-749071d51f93.mp4"
+}

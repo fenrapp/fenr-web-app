@@ -1,8 +1,11 @@
-import Image from 'next/image';
+import { ResponsiveImage } from './responsive-image';
+import { ThemeToggle } from './theme-toggle';
+import media from './optimized-media.json';
 import { MotionController } from './motion-controller';
 import { ProductStory } from './product-story';
 import { siteConfig } from './site-config';
 import './companions.css';
+import './color-scheme.css';
 
 function ArrowIcon() {
   return (
@@ -27,13 +30,13 @@ export default function Home() {
       <div className="premium-header-shell">
         <header className="premium-header">
           <a className="premium-brand" href="#top" aria-label="FENR home">
-            <Image
-              unoptimized
+            <ResponsiveImage
               src="/assets/fenr-icon-light.webp"
               alt=""
               width="38"
               height="38"
-              priority
+              sizes="38px"
+              loading="eager"
             />
             <span>FENR</span>
           </a>
@@ -42,17 +45,20 @@ export default function Home() {
             <a href="#watch">Beyond iPhone</a>
             <a href="#open-source">Open source</a>
           </nav>
-          <a
-            className="premium-header-cta"
-            href={siteConfig.testFlightUrl}
-            aria-label="Join TestFlight"
-          >
-            <span className="premium-header-label-full">Join TestFlight</span>
-            <span className="premium-header-label-compact" aria-hidden="true">
-              Join
-            </span>
-            <ArrowIcon />
-          </a>
+          <div className="premium-header-actions">
+            <ThemeToggle />
+            <a
+              className="premium-header-cta"
+              href={siteConfig.testFlightUrl}
+              aria-label="Join TestFlight"
+            >
+              <span className="premium-header-label-full">Join TestFlight</span>
+              <span className="premium-header-label-compact" aria-hidden="true">
+                Join
+              </span>
+              <ArrowIcon />
+            </a>
+          </div>
         </header>
       </div>
 
@@ -89,37 +95,36 @@ export default function Home() {
           </div>
 
           <div className="premium-hero-stage" id="ride-preview" data-reveal>
-            <div className="hero-trail" aria-hidden="true" />
+            <div className="hero-trail" aria-hidden="true">
+              <ResponsiveImage
+                src="/assets/trail.jpg"
+                alt=""
+                width="922"
+                height="2000"
+                sizes="(max-width: 700px) 90vw, 1200px"
+                loading="eager"
+                fetchPriority="high"
+              />
+            </div>
             <div
               className="hero-device"
               aria-label="FENR live riding dashboard"
             >
               <div className="hero-device-camera" aria-hidden="true" />
-              <Image
-                unoptimized
-                priority
-                className="hero-video-fallback"
-                src="/assets/dashboard-riding.webp"
-                alt="FENR dashboard showing speed, battery, power mode and energy use"
-                width="2622"
-                height="1206"
-              />
-              <div className="hero-video-layer" aria-hidden="true">
-                <video
-                  className="hero-dashboard-video"
-                  data-autoplay-video
-                  loop
-                  muted
-                  playsInline
-                  poster="/assets/fenr-ride-loop-poster-landscape.png"
-                  preload="metadata"
-                >
-                  <source
-                    src="/assets/fenr-ride-loop-landscape.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
+              <video
+                className="hero-dashboard-video"
+                aria-label="FENR dashboard showing speed, battery, power mode and energy use"
+                data-autoplay-video
+                width="1280"
+                height="720"
+                loop
+                muted
+                playsInline
+                poster={media.images['fenr-ride-loop-poster-landscape'].src}
+                preload="none"
+              >
+                <source src={media.videoSrc} type="video/mp4" />
+              </video>
             </div>
             <div className="hero-live-pill">
               <span /> Live simulator data
@@ -193,8 +198,8 @@ export default function Home() {
               </div>
               <figure className="companion-stage companion-stage-watch">
                 <div className="companion-watch">
-                  <Image
-                    unoptimized
+                  <ResponsiveImage
+                    sizes="(max-width: 700px) 200px, 244px"
                     src="/assets/watch-charging.png"
                     alt="FENR Watch app showing charge percentage, ETA, power and current"
                     width="416"
@@ -229,8 +234,8 @@ export default function Home() {
               </div>
               <figure className="companion-stage companion-stage-live">
                 <div className="companion-phone">
-                  <Image
-                    unoptimized
+                  <ResponsiveImage
+                    sizes="220px"
                     src="/assets/live-activity.webp"
                     alt="FENR Live Activity showing battery, power mode and bike state on the iPhone Lock Screen"
                     width="720"
@@ -312,10 +317,18 @@ export default function Home() {
         </section>
 
         <section className="premium-final-cta" id="testflight">
-          <div className="premium-final-background" aria-hidden="true" />
+          <div className="premium-final-background" aria-hidden="true">
+            <ResponsiveImage
+              src="/assets/trail.jpg"
+              alt=""
+              width="922"
+              height="2000"
+              sizes="100vw"
+            />
+          </div>
           <div className="premium-final-copy" data-reveal>
-            <Image
-              unoptimized
+            <ResponsiveImage
+              sizes="76px"
               src="/assets/fenr-icon-dark.webp"
               alt=""
               width="76"

@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { ResponsiveImage } from './responsive-image';
 import { useEffect, useRef, useState } from 'react';
 import './product-tour.css';
 
@@ -140,8 +140,8 @@ function TourVisual({ card }: { card: TourCard }) {
     const image = card.images[0];
     return (
       <div className="tour-landscape-screen">
-        <Image
-          unoptimized
+        <ResponsiveImage
+          sizes="(max-width: 700px) 85vw, 738px"
           src={image.src}
           alt={card.alt}
           width={image.width}
@@ -158,8 +158,8 @@ function TourVisual({ card }: { card: TourCard }) {
     >
       {card.images.map((image, index) => (
         <div className="tour-phone" key={image.src}>
-          <Image
-            unoptimized
+          <ResponsiveImage
+            sizes="(max-width: 700px) 180px, 226px"
             src={image.src}
             alt={
               index === 0

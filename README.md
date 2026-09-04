@@ -22,7 +22,7 @@
 
 This repository contains the static product website for FENR. It presents the iPhone and Apple Watch apps through real simulator captures, synthetic bike data and concise explanations of the product.
 
-The site is intentionally simple: React, TypeScript and CSS, with no backend, analytics, cookies or persistent user data. A real simulator video introduces the app, followed by a horizontal feature tour and dedicated Apple Watch and Live Activities sections.
+The site is intentionally simple: React, TypeScript and CSS, with no backend, analytics or cookies. Only a visitor's chosen color scheme is saved locally. A real simulator video introduces the app, followed by a horizontal feature tour and dedicated Apple Watch and Live Activities sections.
 
 ## 🏍️ What the site covers
 
@@ -58,6 +58,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```bash
 npm run lint
+npx tsc --noEmit
+node scripts/check-media.mjs
 npm run build
 ```
 
@@ -76,14 +78,36 @@ app/
 ├── product-tour.css     # Responsive feature cards and tour controls
 ├── product-story.tsx    # Feature content and horizontal tour
 ├── motion-controller.tsx # Scroll reveals and visible-only video playback
+├── theme-toggle.tsx     # System appearance and saved light/dark choice
+├── color-scheme.css     # Light/dark tokens and theme control styles
+├── responsive-image.tsx # Static responsive WebP rendering
+├── optimized-media.json # Generated content-fingerprinted asset registry
 ├── layout.tsx           # Document metadata and favicon
 ├── page.tsx             # Single page product experience
 └── site-config.ts       # External product links
 
 public/assets/           # FENR icons, photography, WebP captures and video
+public/media/            # Generated responsive files with immutable URLs
+scripts/                 # Local image generation and integrity checks
 ```
 
 The tour uses native scrolling with keyboard-accessible navigation. Scroll effects respect reduced motion, and the hero video pauses outside the viewport. Reduced motion and data-saving preferences disable automatic video playback. All app media uses synthetic simulator data.
+
+## 🪶 Loading and appearance
+
+Images use responsive WebP variants, reserved dimensions and lazy loading below the hero. The hero uses a single video surface with a lightweight poster, so a fallback dashboard cannot show behind playback. Autoplay is disabled for reduced motion, Save-Data and reported 2G/3G connections.
+
+The site initially follows the browser/system light or dark appearance. A header button switches modes and remembers only that choice locally. A tiny pre-paint script restores it without a theme flash. Styles and fonts are served locally; there are no third-party font or stylesheet requests.
+
+Netlify serves the static site through its CDN. Generated files in `public/media/` have content hashes and a one-year immutable browser cache. Other files keep default revalidation so new releases appear correctly.
+
+After replacing source captures in `public/assets/`, install the WebP encoder (`brew install webp` on macOS) and run:
+
+```bash
+node scripts/optimize-images.mjs
+```
+
+Commit the generated `public/media/` files and `app/optimized-media.json` along with the source changes. Normal builds do not need the encoder. Original captures remain available for future exports.
 
 ## 🤝 Contributing
 

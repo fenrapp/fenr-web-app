@@ -12,7 +12,7 @@
   --green: #32d365;
   --forest: #163126;
   --page-gutter: clamp(1.25rem, 5vw, 5.5rem);
-  color-scheme: light;
+  color-scheme: light dark;
 }
 
 * {
@@ -168,7 +168,7 @@ footer > span {
 .story-facts {
   background: #070807;
   border-top: 1px solid rgba(255, 255, 255, 0.11);
-  color: var(--paper-bright);
+  color: #faf9f5;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0;
@@ -363,14 +363,29 @@ footer > span {
 }
 
 .premium-final-background {
-  background-image:
-    linear-gradient(180deg, rgba(3, 5, 4, 0.34), rgba(3, 5, 4, 0.88)),
-    url('/assets/trail.jpg');
-  background-position: center 55%;
-  background-size: cover;
   inset: -3%;
   position: absolute;
   transform: scale(1.04);
+}
+
+.premium-final-background img,
+.hero-trail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+.premium-final-background::after,
+.hero-trail::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 5, 4, 0.34), rgba(3, 5, 4, 0.88));
+}
+
+.hero-trail::after {
+  background: linear-gradient(180deg, rgba(5, 8, 6, 0.02), rgba(5, 8, 6, 0.54));
 }
 
 .premium-final-copy {
@@ -414,7 +429,7 @@ footer > span {
   background: white;
   border: 1px solid white;
   border-radius: 999px;
-  color: var(--ink);
+  color: #0a0a09;
   display: inline-flex;
   font-weight: 720;
   gap: 0.7rem;
@@ -779,11 +794,6 @@ footer > span {
 }
 
 .hero-trail {
-  background-image:
-    linear-gradient(180deg, rgba(5, 8, 6, 0.02), rgba(5, 8, 6, 0.54)),
-    url('/assets/trail.jpg');
-  background-position: center 56%;
-  background-size: cover;
   border-radius: clamp(2.2rem, 5vw, 5.5rem);
   inset: 0 4% 8%;
   overflow: hidden;
@@ -808,24 +818,11 @@ footer > span {
   z-index: 2;
 }
 
-.hero-video-fallback {
-  display: block;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-.hero-video-layer {
-  display: grid;
-  inset: 0;
-  overflow: hidden;
-  place-items: center;
-  position: absolute;
-  z-index: 2;
-}
-
 .hero-dashboard-video {
+  background: #000;
   display: block;
+  position: absolute;
+  inset: 0;
   height: 100%;
   object-fit: cover;
   width: 100%;
@@ -1052,9 +1049,5 @@ footer > span {
   .hero-trail {
     transform: none;
     transition: none;
-  }
-
-  .hero-video-layer {
-    display: none;
   }
 }
