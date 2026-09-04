@@ -22,7 +22,7 @@
 
 This repository contains the static product website for FENR. It presents the iPhone and Apple Watch apps through real simulator captures, synthetic bike data and concise explanations of the product.
 
-The site is intentionally simple: React, TypeScript and CSS, with no backend, analytics, cookies or persistent user data.
+The site is intentionally simple: React, TypeScript and CSS, with no backend, analytics, cookies or persistent user data. A real simulator video introduces the app, followed by a horizontal feature tour and dedicated Apple Watch and Live Activities sections.
 
 ## 🏍️ What the site covers
 
@@ -71,13 +71,19 @@ Product links are centralized in [`app/site-config.ts`](./app/site-config.ts). T
 
 ```text
 app/
-├── globals.css       # Visual system and responsive layout
-├── layout.tsx        # Document metadata and favicon
-├── page.tsx          # Single page product experience
-└── site-config.ts    # External product links
+├── globals.css          # Shared styles, hero, trust and footer
+├── companions.css       # Apple Watch and Live Activities layouts
+├── product-tour.css     # Responsive feature cards and tour controls
+├── product-story.tsx    # Feature content and horizontal tour
+├── motion-controller.tsx # Scroll reveals and visible-only video playback
+├── layout.tsx           # Document metadata and favicon
+├── page.tsx             # Single page product experience
+└── site-config.ts       # External product links
 
-public/assets/        # FENR icons, photography and simulator captures
+public/assets/           # FENR icons, photography, WebP captures and video
 ```
+
+The tour uses native scrolling with keyboard-accessible navigation. Scroll effects respect reduced motion, and the hero video pauses outside the viewport. Reduced motion and data-saving preferences disable automatic video playback. All app media uses synthetic simulator data.
 
 ## 🤝 Contributing
 
