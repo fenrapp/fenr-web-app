@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img src="./public/assets/dashboard-riding.png" width="100%" alt="FENR live riding dashboard">
+  <img src="./public/assets/dashboard-riding.png" width="92%" alt="FENR live riding dashboard">
 </p>
 
 ## ⚡ About this repository
@@ -38,20 +38,6 @@ The site is intentionally simple: React, TypeScript and CSS, with no backend, an
 - **Bike Log:** ride history, service records, costs and maintenance reminders based on published Stark guidance.
 - **Advanced telemetry:** decoded vehicle data, raw signals, connection quality and exportable Bluetooth logs.
 - **Apple Watch and Live Activities:** direct Watch connectivity plus compact information on the Lock Screen and Dynamic Island.
-
-<table>
-  <tr>
-    <td width="50%"><img src="./public/assets/navigation.png" alt="FENR route planning and GPX navigation"></td>
-    <td width="50%"><img src="./public/assets/dashboard-charging.png" alt="FENR charging dashboard"></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Navigation</strong></td>
-    <td align="center"><strong>Charging</strong></td>
-  </tr>
-</table>
-
-> [!NOTE]
-> Every screenshot in this repository uses synthetic simulator data. No real motorcycle identifier is included.
 
 ## 🧰 Stack
 
