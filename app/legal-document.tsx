@@ -1,5 +1,5 @@
+/* oxlint-disable next/no-html-link-for-pages -- Native document navigation is intentional for this static export; the client router fails in production. */
 import type { ReactNode } from 'react';
-import Link from 'next/link';
 import { ResponsiveImage } from './responsive-image';
 import { ThemeToggle } from './theme-toggle';
 import { legalConfig } from './legal-config';
@@ -27,12 +27,7 @@ export function LegalDocument({
         Skip to document
       </a>
       <header className="legal-header">
-        <Link
-          className="premium-brand"
-          href="/"
-          aria-label="FENR home"
-          prefetch={false}
-        >
+        <a className="premium-brand" href="/" aria-label="FENR home">
           <ResponsiveImage
             src="/assets/fenr-icon-light.webp"
             width={38}
@@ -42,11 +37,9 @@ export function LegalDocument({
             loading="eager"
           />
           <span>FENR</span>
-        </Link>
+        </a>
         <div className="legal-header-actions">
-          <Link href="/" prefetch={false}>
-            Back to FENR
-          </Link>
+          <a href="/">Back to FENR</a>
           <ThemeToggle />
         </div>
       </header>
@@ -93,12 +86,8 @@ export function LegalDocument({
           FENR is independent, unofficial and not affiliated with Stark Future.
         </p>
         <nav aria-label="Legal links">
-          <Link href="/privacy" prefetch={false}>
-            Privacy Policy
-          </Link>
-          <Link href="/terms" prefetch={false}>
-            Terms &amp; Conditions
-          </Link>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms &amp; Conditions</a>
           <a href={`mailto:${legalConfig.email}`}>Contact</a>
         </nav>
       </footer>

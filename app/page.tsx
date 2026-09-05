@@ -1,5 +1,5 @@
+/* oxlint-disable next/no-html-link-for-pages -- Native document navigation is intentional for this static export; the client router fails in production. */
 import { ResponsiveImage } from './responsive-image';
-import Link from 'next/link';
 import { ThemeToggle } from './theme-toggle';
 import media from './optimized-media.json';
 import { MotionController } from './motion-controller';
@@ -363,12 +363,8 @@ export default function Home() {
         </p>
         <div className="footer-legal">
           <nav aria-label="Legal links">
-            <Link href="/privacy" prefetch={false}>
-              Privacy Policy
-            </Link>
-            <Link href="/terms" prefetch={false}>
-              Terms &amp; Conditions
-            </Link>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms &amp; Conditions</a>
           </nav>
           <span>© 2026 FENR · MIT</span>
         </div>

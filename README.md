@@ -59,6 +59,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```bash
 npm run lint
+npm test
 npx tsc --noEmit
 node scripts/check-media.mjs
 npm run build
@@ -78,6 +79,8 @@ The website includes dedicated, statically exported legal pages linked from its 
 - **[Terms & Conditions](https://fenr.to/terms):** authorized motorcycle use, supported controls, navigation and maintenance limitations, MIT licensing and Apple distribution.
 
 Both pages share a responsive document layout, a section index, light/dark appearance and print styles. They are written in English and describe the current iPhone and Apple Watch app, not hypothetical accounts or cloud services.
+
+Cross-page navigation uses native HTML links so it works directly with the static export, without relying on a client-side router. `npm test` checks this contract; verify actual clicks against the production export when changing navigation.
 
 Provider details and the last-updated date are centralized in [`app/legal-config.ts`](./app/legal-config.ts):
 

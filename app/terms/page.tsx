@@ -1,5 +1,5 @@
+/* oxlint-disable next/no-html-link-for-pages -- Native document navigation is intentional for this static export; the client router fails in production. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { LegalDocument, type LegalSection } from '../legal-document';
 import { legalConfig } from '../legal-config';
 
@@ -243,14 +243,10 @@ const sections: readonly LegalSection[] = [
     content: (
       <>
         <p>
-          The{' '}
-          <Link href="/privacy" prefetch={false}>
-            Privacy Policy
-          </Link>{' '}
-          explains local storage, permissions, maps, beta diagnostics and
-          sharing. You keep your rights in the routes, notes and other content
-          you create. Using FENR does not grant us a right to publish your
-          private riding history.
+          The <a href="/privacy">Privacy Policy</a> explains local storage,
+          permissions, maps, beta diagnostics and sharing. You keep your rights
+          in the routes, notes and other content you create. Using FENR does not
+          grant us a right to publish your private riding history.
         </p>
         <p>
           You are responsible for having permission to import or share files and
