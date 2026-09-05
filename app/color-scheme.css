@@ -3,6 +3,8 @@
   --header-surface: rgba(250, 249, 245, 0.86);
   --button-ink: white;
   --hero-copy: #41413c;
+  --hero-device-surface: #fff;
+  --hero-device-frame: #d5d6d2;
   --companion-muted: #5a625a;
   --companion-label: #526156;
   --companion-list: #38483d;
@@ -11,6 +13,15 @@
   --live-caption: #505d52;
   --pill-surface: rgba(250, 249, 245, 0.88);
   --signal-ink: #0a0a09;
+}
+
+.app-screenshot {
+  display: block;
+  width: 100%;
+}
+
+.app-screenshot[data-theme-pending] {
+  visibility: hidden;
 }
 
 /* A saved choice overrides the OS. Without a choice, CSS works before JS. */
@@ -26,6 +37,8 @@
     --header-surface: rgba(17, 22, 19, 0.88);
     --button-ink: #111613;
     --hero-copy: #b8c1b9;
+    --hero-device-surface: #000;
+    --hero-device-frame: #1b1c1a;
     --companion-muted: #b8c1b9;
     --companion-label: #bbcfbd;
     --companion-list: #bbcfbd;
@@ -48,6 +61,8 @@
   --header-surface: rgba(17, 22, 19, 0.88);
   --button-ink: #111613;
   --hero-copy: #b8c1b9;
+  --hero-device-surface: #000;
+  --hero-device-frame: #1b1c1a;
   --companion-muted: #b8c1b9;
   --companion-label: #bbcfbd;
   --companion-list: #bbcfbd;

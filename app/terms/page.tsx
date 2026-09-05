@@ -291,54 +291,27 @@ const sections: readonly LegalSection[] = [
   },
   {
     id: 'warranty-liability',
-    title: 'Warranties and liability',
+    title: 'Use at your own risk',
     content: (
       <>
         <p>
-          To the extent permitted by law, FENR is provided as available, without
-          a promise that it is error-free, suitable for every purpose or able to
-          prevent accidents, theft, battery damage, breakdowns or data loss.
-          Open-source materials also carry the warranty provisions stated in
-          their licenses.
+          FENR is independent, open-source software provided as is, without
+          warranties. You use it at your own risk.
         </p>
         <p>
-          To the extent permitted by applicable law, the provider is not
-          responsible for indirect or consequential losses arising from use of,
-          or inability to use, FENR. This limitation does not exclude or limit
-          responsibility that cannot lawfully be excluded or limited.
-        </p>
-        <p>
-          <strong>
-            Nothing in these terms excludes mandatory consumer rights or
-            liability for fraud, deliberate misconduct, death or personal injury
-            caused by negligence where such exclusion is prohibited, or any
-            other non-excludable liability.
-          </strong>{' '}
-          Statutory rights and remedies take priority over inconsistent wording
-          in these terms.
+          To the extent permitted by law, the developer and contributors are not
+          responsible for motorcycle errors, incorrect settings, breakdowns,
+          battery damage, data loss or other damage arising from using, or being
+          unable to use, FENR.
         </p>
       </>
     ),
   },
   {
     id: 'law-contact',
-    title: 'Governing law and contact',
+    title: 'Contact',
     content: (
       <>
-        <p>
-          These product-use terms are governed by Spanish law, without depriving
-          consumers of mandatory protections available under the law of their
-          usual residence. Consumers retain the right to bring claims before any
-          court competent under applicable consumer law. For disputes not
-          subject to those mandatory rules, the courts of Barcelona, Spain will
-          have jurisdiction.
-        </p>
-        <p>
-          This choice of law does not replace the separate terms governing
-          Apple&apos;s services or change the permissions granted by an
-          applicable open-source license. If a provision is unenforceable, the
-          remaining provisions continue to apply to the extent allowed by law.
-        </p>
         <p>
           Questions about FENR or these terms can be sent to:
           <br />

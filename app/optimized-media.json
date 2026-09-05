@@ -1,52 +1,96 @@
 {
   "images": {
-    "dashboard-riding": {
-      "src": "/media/dashboard-riding-2622-31124bf79ab7.webp",
-      "srcSet": "/media/dashboard-riding-640-a9146576290b.webp 640w, /media/dashboard-riding-1280-c306fee23e32.webp 1280w, /media/dashboard-riding-2622-31124bf79ab7.webp 2622w"
+    "dashboard-riding-light": {
+      "src": "/media/dashboard-riding-light-2622-10ef303aa5f5.webp",
+      "srcSet": "/media/dashboard-riding-light-640-3d9084a9dfe3.webp 640w, /media/dashboard-riding-light-1280-ffeea379bb9f.webp 1280w, /media/dashboard-riding-light-2622-10ef303aa5f5.webp 2622w"
     },
-    "dashboard-charging": {
-      "src": "/media/dashboard-charging-2622-73298e46bfcc.webp",
-      "srcSet": "/media/dashboard-charging-640-66bc3414c068.webp 640w, /media/dashboard-charging-1280-e1b5451ab78f.webp 1280w, /media/dashboard-charging-2622-73298e46bfcc.webp 2622w"
+    "dashboard-riding-dark": {
+      "src": "/media/dashboard-riding-dark-2622-a4f4cda726d5.webp",
+      "srcSet": "/media/dashboard-riding-dark-640-f80a2f72daaa.webp 640w, /media/dashboard-riding-dark-1280-f98ffaf3c2f1.webp 1280w, /media/dashboard-riding-dark-2622-a4f4cda726d5.webp 2622w"
     },
-    "navigation": {
-      "src": "/media/navigation-1800-ed1eda3356c0.webp",
-      "srcSet": "/media/navigation-640-c5fa28493bd7.webp 640w, /media/navigation-1280-73439c069033.webp 1280w, /media/navigation-1800-ed1eda3356c0.webp 1800w"
+    "dashboard-charging-light": {
+      "src": "/media/dashboard-charging-light-2622-64fc59acac1b.webp",
+      "srcSet": "/media/dashboard-charging-light-640-0927c7b646a6.webp 640w, /media/dashboard-charging-light-1280-17aa115bbe1d.webp 1280w, /media/dashboard-charging-light-2622-64fc59acac1b.webp 2622w"
     },
-    "dashboard-cards": {
-      "src": "/media/dashboard-cards-720-e127a0331438.webp",
-      "srcSet": "/media/dashboard-cards-360-877607883022.webp 360w, /media/dashboard-cards-480-dfbff9306e99.webp 480w, /media/dashboard-cards-720-e127a0331438.webp 720w"
+    "dashboard-charging-dark": {
+      "src": "/media/dashboard-charging-dark-2622-5c7716582f6e.webp",
+      "srcSet": "/media/dashboard-charging-dark-640-d04ceddb583f.webp 640w, /media/dashboard-charging-dark-1280-0cd1ba044ca6.webp 1280w, /media/dashboard-charging-dark-2622-5c7716582f6e.webp 2622w"
     },
-    "battery-health": {
-      "src": "/media/battery-health-720-9403c3cde73d.webp",
-      "srcSet": "/media/battery-health-360-0cab60670b0d.webp 360w, /media/battery-health-480-02179eee031c.webp 480w, /media/battery-health-720-9403c3cde73d.webp 720w"
+    "navigation-light": {
+      "src": "/media/navigation-light-2622-c2cccc2267bb.webp",
+      "srcSet": "/media/navigation-light-640-c16de95004d3.webp 640w, /media/navigation-light-1280-a84ca7c69784.webp 1280w, /media/navigation-light-2622-c2cccc2267bb.webp 2622w"
     },
-    "battery-cells": {
-      "src": "/media/battery-cells-720-904917888b3a.webp",
-      "srcSet": "/media/battery-cells-360-caf0c6716c06.webp 360w, /media/battery-cells-480-6c029c26e6a5.webp 480w, /media/battery-cells-720-904917888b3a.webp 720w"
+    "navigation-dark": {
+      "src": "/media/navigation-dark-2622-d4dd777daf81.webp",
+      "srcSet": "/media/navigation-dark-640-ef0e125d5166.webp 640w, /media/navigation-dark-1280-4049ae7be248.webp 1280w, /media/navigation-dark-2622-d4dd777daf81.webp 2622w"
     },
-    "power-modes": {
-      "src": "/media/power-modes-720-38b578e28607.webp",
-      "srcSet": "/media/power-modes-360-b79a84e7508c.webp 360w, /media/power-modes-480-c84c6f3ac7c7.webp 480w, /media/power-modes-720-38b578e28607.webp 720w"
+    "live-activity-light": {
+      "src": "/media/live-activity-light-1154-9955554bea33.webp",
+      "srcSet": "/media/live-activity-light-480-804b473abfa4.webp 480w, /media/live-activity-light-720-f650f2de4325.webp 720w, /media/live-activity-light-1154-9955554bea33.webp 1154w"
     },
-    "ride-history": {
-      "src": "/media/ride-history-720-9120c9a1461b.webp",
-      "srcSet": "/media/ride-history-360-b7735d755779.webp 360w, /media/ride-history-480-6f0d75cb6b80.webp 480w, /media/ride-history-720-9120c9a1461b.webp 720w"
+    "live-activity-dark": {
+      "src": "/media/live-activity-dark-1154-a0198f7f69d4.webp",
+      "srcSet": "/media/live-activity-dark-480-a9ab66553c18.webp 480w, /media/live-activity-dark-720-0d9cfc1676b5.webp 720w, /media/live-activity-dark-1154-a0198f7f69d4.webp 1154w"
     },
-    "maintenance": {
-      "src": "/media/maintenance-720-aee2f5ea2107.webp",
-      "srcSet": "/media/maintenance-360-8b0951017ed1.webp 360w, /media/maintenance-480-edf017f3eee2.webp 480w, /media/maintenance-720-aee2f5ea2107.webp 720w"
+    "dashboard-cards-light": {
+      "src": "/media/dashboard-cards-light-720-f7fa1fdb6beb.webp",
+      "srcSet": "/media/dashboard-cards-light-360-88a50c776196.webp 360w, /media/dashboard-cards-light-480-0864a4beee5e.webp 480w, /media/dashboard-cards-light-720-f7fa1fdb6beb.webp 720w"
     },
-    "diagnostics": {
-      "src": "/media/diagnostics-720-156f5623c439.webp",
-      "srcSet": "/media/diagnostics-360-f4fb74698937.webp 360w, /media/diagnostics-480-fdd179b398d2.webp 480w, /media/diagnostics-720-156f5623c439.webp 720w"
+    "dashboard-cards-dark": {
+      "src": "/media/dashboard-cards-dark-720-92dd6e6aed81.webp",
+      "srcSet": "/media/dashboard-cards-dark-360-9803632724b1.webp 360w, /media/dashboard-cards-dark-480-3ceaecd6c42e.webp 480w, /media/dashboard-cards-dark-720-92dd6e6aed81.webp 720w"
     },
-    "live-activity": {
-      "src": "/media/live-activity-720-0b341ca27d36.webp",
-      "srcSet": "/media/live-activity-360-afb10343360e.webp 360w, /media/live-activity-480-6c415ec0e900.webp 480w, /media/live-activity-720-0b341ca27d36.webp 720w"
+    "battery-health-light": {
+      "src": "/media/battery-health-light-720-9c4d6f5776e3.webp",
+      "srcSet": "/media/battery-health-light-360-b319dcb673af.webp 360w, /media/battery-health-light-480-35d4414e6ca8.webp 480w, /media/battery-health-light-720-9c4d6f5776e3.webp 720w"
+    },
+    "battery-health-dark": {
+      "src": "/media/battery-health-dark-720-45d89d80cdae.webp",
+      "srcSet": "/media/battery-health-dark-360-994d1d311368.webp 360w, /media/battery-health-dark-480-1f421c2abbd4.webp 480w, /media/battery-health-dark-720-45d89d80cdae.webp 720w"
+    },
+    "battery-cells-light": {
+      "src": "/media/battery-cells-light-720-16bdac9ed47f.webp",
+      "srcSet": "/media/battery-cells-light-360-5b2069b3d006.webp 360w, /media/battery-cells-light-480-9d7dc8790b28.webp 480w, /media/battery-cells-light-720-16bdac9ed47f.webp 720w"
+    },
+    "battery-cells-dark": {
+      "src": "/media/battery-cells-dark-720-e2cddd9952ab.webp",
+      "srcSet": "/media/battery-cells-dark-360-d35c074cf102.webp 360w, /media/battery-cells-dark-480-96025b802c8e.webp 480w, /media/battery-cells-dark-720-e2cddd9952ab.webp 720w"
+    },
+    "power-modes-light": {
+      "src": "/media/power-modes-light-720-fca0a9905a24.webp",
+      "srcSet": "/media/power-modes-light-360-c79ee08839bf.webp 360w, /media/power-modes-light-480-318b1657c207.webp 480w, /media/power-modes-light-720-fca0a9905a24.webp 720w"
+    },
+    "power-modes-dark": {
+      "src": "/media/power-modes-dark-720-cabd39c65b80.webp",
+      "srcSet": "/media/power-modes-dark-360-502f922a4cad.webp 360w, /media/power-modes-dark-480-4a98001e5f44.webp 480w, /media/power-modes-dark-720-cabd39c65b80.webp 720w"
+    },
+    "ride-history-light": {
+      "src": "/media/ride-history-light-720-3220068d5923.webp",
+      "srcSet": "/media/ride-history-light-360-823ea0cc1517.webp 360w, /media/ride-history-light-480-204b5b1f9c74.webp 480w, /media/ride-history-light-720-3220068d5923.webp 720w"
+    },
+    "ride-history-dark": {
+      "src": "/media/ride-history-dark-720-45099b3c1578.webp",
+      "srcSet": "/media/ride-history-dark-360-d0c724cf2775.webp 360w, /media/ride-history-dark-480-8f47bd5a2c42.webp 480w, /media/ride-history-dark-720-45099b3c1578.webp 720w"
+    },
+    "maintenance-light": {
+      "src": "/media/maintenance-light-720-64298a5407a7.webp",
+      "srcSet": "/media/maintenance-light-360-43075bcb8ef2.webp 360w, /media/maintenance-light-480-62870318eec0.webp 480w, /media/maintenance-light-720-64298a5407a7.webp 720w"
+    },
+    "maintenance-dark": {
+      "src": "/media/maintenance-dark-720-baa866d579f5.webp",
+      "srcSet": "/media/maintenance-dark-360-c936d13fe29b.webp 360w, /media/maintenance-dark-480-7070e2d6c29a.webp 480w, /media/maintenance-dark-720-baa866d579f5.webp 720w"
+    },
+    "diagnostics-light": {
+      "src": "/media/diagnostics-light-720-7893800c0573.webp",
+      "srcSet": "/media/diagnostics-light-360-91f817cc8d54.webp 360w, /media/diagnostics-light-480-1c238bf4a673.webp 480w, /media/diagnostics-light-720-7893800c0573.webp 720w"
+    },
+    "diagnostics-dark": {
+      "src": "/media/diagnostics-dark-720-754c04478f92.webp",
+      "srcSet": "/media/diagnostics-dark-360-c263bd4b6e5a.webp 360w, /media/diagnostics-dark-480-c33a519be43c.webp 480w, /media/diagnostics-dark-720-754c04478f92.webp 720w"
     },
     "watch-charging": {
-      "src": "/media/watch-charging-416-173dd734fe75.webp",
-      "srcSet": "/media/watch-charging-256-36392ce78ecf.webp 256w, /media/watch-charging-416-173dd734fe75.webp 416w"
+      "src": "/media/watch-charging-416-21277e3b8188.webp",
+      "srcSet": "/media/watch-charging-256-a6e220c80ec0.webp 256w, /media/watch-charging-416-21277e3b8188.webp 416w"
     },
     "fenr-icon-light": {
       "src": "/media/fenr-icon-light-256-8c38d976d4fb.webp",
@@ -60,10 +104,17 @@
       "src": "/media/trail-922-052c0d65f361.webp",
       "srcSet": "/media/trail-640-fe47285060b0.webp 640w, /media/trail-922-052c0d65f361.webp 922w"
     },
-    "fenr-ride-loop-poster-landscape": {
-      "src": "/media/fenr-ride-loop-poster-landscape-1280-0b992cf726c3.webp",
-      "srcSet": "/media/fenr-ride-loop-poster-landscape-1280-0b992cf726c3.webp 1280w"
+    "fenr-ride-loop-poster-light": {
+      "src": "/media/fenr-ride-loop-poster-light-1280-7bcb883ca399.webp",
+      "srcSet": "/media/fenr-ride-loop-poster-light-640-4624620a042b.webp 640w, /media/fenr-ride-loop-poster-light-1280-7bcb883ca399.webp 1280w"
+    },
+    "fenr-ride-loop-poster-dark": {
+      "src": "/media/fenr-ride-loop-poster-dark-1280-1d0e286cc77a.webp",
+      "srcSet": "/media/fenr-ride-loop-poster-dark-640-3fd1a76ad1a0.webp 640w, /media/fenr-ride-loop-poster-dark-1280-1d0e286cc77a.webp 1280w"
     }
   },
-  "videoSrc": "/media/fenr-ride-loop-749071d51f93.mp4"
+  "videos": {
+    "light": "/media/fenr-ride-loop-light-ae28b73fe6b0.mp4",
+    "dark": "/media/fenr-ride-loop-dark-51cbec112631.mp4"
+  }
 }

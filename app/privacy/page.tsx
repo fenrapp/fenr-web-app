@@ -279,6 +279,16 @@ const sections: readonly LegalSection[] = [
           Public GitHub issues are public: do not post sensitive information
           there.
         </p>
+        <p>
+          If you send us personal information, contact{' '}
+          <a href={`mailto:${legalConfig.email}`}>{legalConfig.email}</a> about
+          that information. Subject to applicable law, you may request access,
+          correction, deletion, restriction or portability, object to processing
+          based on legitimate interests, or withdraw consent where it is the
+          legal basis. You may also raise a concern with your local data
+          protection authority. These rights concern information we actually
+          receive or hold, not records stored only on your devices.
+        </p>
       </>
     ),
   },
@@ -320,11 +330,12 @@ const sections: readonly LegalSection[] = [
     content: (
       <>
         <p>
-          Where data-protection law applies, we process information necessary to
-          provide the features and support you request on the basis of
-          performing our agreement with you. Optional permission-dependent
-          features use your choices and, where legally required, consent. Device
-          permission alone is not treated as consent to unrelated uses.
+          Local bike features do not give the developer access to your stored
+          records. Where we receive personal information through support or
+          Apple&apos;s beta distribution, the purposes are limited to those
+          described above. We use information needed to answer your support
+          request to provide that requested service. Optional device permissions
+          enable on-device features, not developer access to your data.
         </p>
         <p>
           We rely on legitimate interests for proportionate security, fault
@@ -353,7 +364,7 @@ const sections: readonly LegalSection[] = [
   },
   {
     id: 'rights',
-    title: 'Your choices and rights',
+    title: 'Your on-device controls',
     content: (
       <>
         <p>
@@ -363,22 +374,17 @@ const sections: readonly LegalSection[] = [
           corresponding feature unavailable.
         </p>
         <p>
-          Subject to applicable law, you may request access, correction,
-          erasure, restriction or portability of personal data we hold, object
-          to processing based on legitimate interests, and withdraw consent
-          without affecting earlier lawful processing. We may need proportionate
-          identity verification. Local-only data remains under your device
-          controls; contacting us does not give us remote access to it.
+          Your saved bike profile, rides, routes, maintenance records and local
+          diagnostic logs are managed on your devices. The developer cannot
+          remotely retrieve, change, export or delete those records. There is no
+          FENR account or server-side copy to manage through a support request.
         </p>
         <p>
-          Contact{' '}
-          <a href={`mailto:${legalConfig.email}`}>{legalConfig.email}</a> to
-          exercise your rights. You may also complain to your local supervisory
-          authority or the{' '}
-          <a href="https://www.aepd.es/">
-            Spanish Data Protection Agency (AEPD)
-          </a>
-          .
+          Use the available in-app controls to review, export or delete saved
+          content. Manage permissions and backups through system settings.
+          Copies you choose to export or send to someone else must be managed
+          separately. Contacting support does not grant remote access to your
+          iPhone, Apple Watch or motorcycle.
         </p>
       </>
     ),

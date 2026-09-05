@@ -731,13 +731,13 @@ footer > span {
     var(--paper);
   min-height: 100vh;
   overflow: hidden;
-  padding: clamp(8.5rem, 12vw, 11.5rem) var(--premium-gutter) 0;
+  padding: clamp(8rem, 10vw, 10rem) var(--premium-gutter) 0;
   position: relative;
 }
 
 .premium-hero-copy {
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1180px;
   position: relative;
   text-align: center;
   z-index: 2;
@@ -751,12 +751,12 @@ footer > span {
 }
 
 .premium-hero h1 {
-  font-size: clamp(4.8rem, 10.4vw, 10.5rem);
+  font-size: clamp(4.8rem, 8.8vw, 9.2rem);
   font-weight: 720;
-  letter-spacing: -0.075em;
-  line-height: 0.84;
+  letter-spacing: -0.065em;
+  line-height: 0.93;
   margin: 0 auto;
-  max-width: 10ch;
+  max-width: 14ch;
 }
 
 .premium-hero-intro {
@@ -787,8 +787,8 @@ footer > span {
 }
 
 .premium-hero-stage {
-  aspect-ratio: 1.62;
-  margin: clamp(4.5rem, 8vw, 7rem) auto 0;
+  aspect-ratio: 1.9;
+  margin: clamp(3.5rem, 5vw, 5rem) auto 0;
   max-width: 1340px;
   position: relative;
 }
@@ -803,8 +803,8 @@ footer > span {
 
 .hero-device {
   aspect-ratio: 2622 / 1206;
-  background: #000;
-  border: clamp(5px, 0.65vw, 9px) solid #1b1c1a;
+  background: var(--hero-device-surface);
+  border: clamp(5px, 0.65vw, 9px) solid var(--hero-device-frame);
   border-radius: clamp(1.4rem, 3.2vw, 3.3rem);
   bottom: 3%;
   box-shadow:
@@ -819,24 +819,44 @@ footer > span {
 }
 
 .hero-dashboard-video {
-  background: #000;
+  background: var(--hero-device-surface);
   display: block;
   position: absolute;
   inset: 0;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
 
-.hero-device-camera {
-  background: #080808;
+.hero-playback {
+  align-items: center;
+  background: var(--pill-surface);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  height: 20%;
-  left: 1.02%;
+  bottom: 0;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 600;
+  gap: 8px;
+  left: 0;
+  min-height: 44px;
+  padding: 10px 16px;
   position: absolute;
-  top: 40%;
-  width: 1.35%;
-  z-index: 4;
+  z-index: 5;
+}
+.hero-playback svg {
+  fill: none;
+  height: 14px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  width: 14px;
+}
+.hero-playback:hover {
+  background: var(--paper-bright);
 }
 
 .hero-live-pill {
@@ -986,6 +1006,7 @@ footer > span {
 
   .premium-hero-actions {
     justify-content: flex-start;
+    gap: 1rem;
   }
 
   .premium-hero-stage {
@@ -1000,8 +1021,8 @@ footer > span {
 
   .hero-device {
     bottom: 13%;
-    left: -7%;
-    width: 112%;
+    left: 0;
+    width: 100%;
   }
 
   .hero-live-pill {

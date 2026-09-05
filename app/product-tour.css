@@ -95,7 +95,7 @@
   border-radius: 28px;
   display: grid;
   flex: 0 0 min(820px, calc(100vw - 2 * var(--tour-gutter)));
-  grid-template-columns: minmax(0, 1fr) 260px;
+  grid-template-columns: minmax(0, 1fr) 264px;
   grid-template-rows: 1fr auto;
   column-gap: 36px;
   min-height: 610px;
@@ -155,7 +155,7 @@
   border: 1px solid #555d56;
   border-radius: 28px;
   box-shadow: 0 16px 36px #00000030;
-  flex: 0 1 226px;
+  flex: 0 1 244px;
   min-width: 0;
   overflow: hidden;
   padding: 4px;
@@ -333,7 +333,7 @@
     align-self: center;
   }
   .tour-phone {
-    flex-basis: 180px;
+    flex-basis: 202px;
     border-radius: 22px;
     padding: 3px;
   }

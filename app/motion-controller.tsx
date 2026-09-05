@@ -7,9 +7,6 @@ export function MotionController() {
     const root = document.documentElement;
     root.classList.add('motion-ready');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const connection = navigator as Navigator & {
-      connection?: { saveData?: boolean; effectiveType?: string };
-    };
 
     const revealElements = Array.from(
       document.querySelectorAll<HTMLElement>('[data-reveal]'),
@@ -46,43 +43,9 @@ export function MotionController() {
       headerObserver?.observe(headerSentinel);
     }
 
-    const videos = Array.from(
-      document.querySelectorAll<HTMLVideoElement>('[data-autoplay-video]'),
-    );
-    const shouldPlayVideo =
-      !reducedMotion.matches &&
-      !connection.connection?.saveData &&
-      !['slow-2g', '2g', '3g'].includes(
-        connection.connection?.effectiveType ?? '',
-      );
-    const videoObserver = shouldPlayVideo
-      ? new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              const video = entry.target as HTMLVideoElement;
-              if (entry.isIntersecting) {
-                void video.play().catch(() => undefined);
-              } else {
-                video.pause();
-              }
-            });
-          },
-          { threshold: 0.35 },
-        )
-      : null;
-
-    videos.forEach((video) => {
-      if (shouldPlayVideo) {
-        videoObserver?.observe(video);
-      } else {
-        video.pause();
-      }
-    });
-
     return () => {
       revealObserver?.disconnect();
       headerObserver?.disconnect();
-      videoObserver?.disconnect();
       root.classList.remove('motion-ready');
       root.classList.remove('page-has-scrolled');
     };

@@ -1,6 +1,6 @@
 'use client';
 
-import { ResponsiveImage } from './responsive-image';
+import { AppScreenshot } from './app-screenshot';
 import { useEffect, useRef, useState } from 'react';
 import './product-tour.css';
 
@@ -24,8 +24,8 @@ const tourCards: readonly TourCard[] = [
     label: 'LIVE DASHBOARD',
     title: 'Just you. And the ride.',
     shortcut: 'Dashboard',
-    detail: 'Speed / Battery / Power / Regen',
-    copy: 'Speed, battery, map, power and regeneration stay legible in a landscape-first display.',
+    detail: 'Speed / Battery / Power / Regen / Traction',
+    copy: 'Speed and battery at a glance. Power, regeneration and traction close at hand. A landscape-first display built around the ride.',
     kind: 'landscape',
     alt: 'FENR live riding dashboard',
     images: [
@@ -42,7 +42,7 @@ const tourCards: readonly TourCard[] = [
     copy: 'Search, route, record, import GPX and follow enduro guidance in either direction with an always-available mini map.',
     kind: 'landscape',
     alt: 'FENR route planning map with GPX import and ride recording',
-    images: [{ src: '/assets/navigation.webp', width: 1800, height: 828 }],
+    images: [{ src: '/assets/navigation.webp', width: 2622, height: 1206 }],
   },
   {
     number: '03',
@@ -54,7 +54,9 @@ const tourCards: readonly TourCard[] = [
     copy: 'Speed stays first. Charging appears when you plug in. Show, hide and reorder the other cards, from trip and range to efficiency and ride dynamics.',
     kind: 'phone',
     alt: 'FENR Dashboard Cards settings with configurable riding cards',
-    images: [{ src: '/assets/dashboard-cards.webp', width: 720, height: 1565 }],
+    images: [
+      { src: '/assets/dashboard-cards.webp', width: 1206, height: 2622 },
+    ],
   },
   {
     number: '04',
@@ -81,8 +83,8 @@ const tourCards: readonly TourCard[] = [
     kind: 'pair',
     alt: 'FENR Battery Health overview',
     images: [
-      { src: '/assets/battery-health.webp', width: 720, height: 1565 },
-      { src: '/assets/battery-cells.webp', width: 720, height: 1565 },
+      { src: '/assets/battery-health.webp', width: 1206, height: 2622 },
+      { src: '/assets/battery-cells.webp', width: 1206, height: 2622 },
     ],
   },
   {
@@ -95,7 +97,7 @@ const tourCards: readonly TourCard[] = [
     copy: 'Adjust supported power, regeneration and traction values, with Bike Lock protected by optional PIN and Face ID.',
     kind: 'phone',
     alt: 'FENR Power Modes showing five configurable base maps',
-    images: [{ src: '/assets/power-modes.webp', width: 720, height: 1565 }],
+    images: [{ src: '/assets/power-modes.webp', width: 1206, height: 2622 }],
   },
   {
     number: '07',
@@ -106,8 +108,8 @@ const tourCards: readonly TourCard[] = [
     detail: 'Energy / Dynamics / Ride comparisons',
     copy: 'Keep distance, time, speed, efficiency, energy use and ride dynamics, then compare recent sessions.',
     kind: 'phone',
-    alt: 'FENR ride history with distance, time and efficiency',
-    images: [{ src: '/assets/ride-history.webp', width: 720, height: 1565 }],
+    alt: 'FENR saved ride detail with distance, time, speed and energy statistics',
+    images: [{ src: '/assets/ride-history.webp', width: 1206, height: 2622 }],
   },
   {
     number: '08',
@@ -119,7 +121,7 @@ const tourCards: readonly TourCard[] = [
     copy: 'Service, repairs, workshop notes and costs in one record. Editable reminders follow the published Stark maintenance guidance.',
     kind: 'phone',
     alt: 'FENR maintenance entry with service details and reminders',
-    images: [{ src: '/assets/maintenance.webp', width: 720, height: 1565 }],
+    images: [{ src: '/assets/maintenance.webp', width: 1206, height: 2622 }],
   },
   {
     number: '09',
@@ -131,7 +133,7 @@ const tourCards: readonly TourCard[] = [
     copy: 'Open decoded and raw vehicle values, inspect connection quality and export Bluetooth capture logs for deeper analysis.',
     kind: 'phone',
     alt: 'FENR live diagnostics with vehicle and connection telemetry',
-    images: [{ src: '/assets/diagnostics.webp', width: 720, height: 1565 }],
+    images: [{ src: '/assets/diagnostics.webp', width: 1206, height: 2622 }],
   },
 ] as const;
 
@@ -140,7 +142,7 @@ function TourVisual({ card }: { card: TourCard }) {
     const image = card.images[0];
     return (
       <div className="tour-landscape-screen">
-        <ResponsiveImage
+        <AppScreenshot
           sizes="(max-width: 700px) 85vw, 738px"
           src={image.src}
           alt={card.alt}
@@ -158,8 +160,12 @@ function TourVisual({ card }: { card: TourCard }) {
     >
       {card.images.map((image, index) => (
         <div className="tour-phone" key={image.src}>
-          <ResponsiveImage
-            sizes="(max-width: 700px) 180px, 226px"
+          <AppScreenshot
+            sizes={
+              card.kind === 'pair'
+                ? '(max-width: 600px) 38vw, 244px'
+                : '(max-width: 600px) 202px, 244px'
+            }
             src={image.src}
             alt={
               index === 0

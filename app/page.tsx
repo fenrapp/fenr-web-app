@@ -1,7 +1,8 @@
 /* oxlint-disable next/no-html-link-for-pages -- Native document navigation is intentional for this static export; the client router fails in production. */
 import { ResponsiveImage } from './responsive-image';
 import { ThemeToggle } from './theme-toggle';
-import media from './optimized-media.json';
+import { HeroFilm } from './hero-film';
+import { AppScreenshot } from './app-screenshot';
 import { MotionController } from './motion-controller';
 import { ProductStory } from './product-story';
 import { siteConfig } from './site-config';
@@ -108,33 +109,13 @@ export default function Home() {
                 fetchPriority="high"
               />
             </div>
-            <div
-              className="hero-device"
-              aria-label="FENR live riding dashboard"
-            >
-              <div className="hero-device-camera" aria-hidden="true" />
-              <video
-                className="hero-dashboard-video"
-                aria-label="FENR dashboard showing speed, battery, power mode and energy use"
-                data-autoplay-video
-                width="1280"
-                height="720"
-                loop
-                muted
-                playsInline
-                poster={media.images['fenr-ride-loop-poster-landscape'].src}
-                preload="none"
-              >
-                <source src={media.videoSrc} type="video/mp4" />
-              </video>
-            </div>
+            <HeroFilm />
             <div className="hero-live-pill">
-              <span /> Live simulator data
+              <span /> Recorded in FENR
             </div>
             <div className="hero-stage-note">
-              <span>60 km/h</span>
-              <span>Map 5</span>
-              <span>12 kW</span>
+              <span>Real interface</span>
+              <span>Synthetic ride data</span>
             </div>
           </div>
 
@@ -235,17 +216,19 @@ export default function Home() {
                 </ul>
               </div>
               <figure className="companion-stage companion-stage-live">
-                <div className="companion-phone">
-                  <ResponsiveImage
-                    sizes="220px"
+                <div className="companion-live-preview">
+                  <AppScreenshot
+                    sizes="(max-width: 600px) calc(100vw - 80px), (max-width: 1000px) 40vw, 500px"
                     src="/assets/live-activity.webp"
-                    alt="FENR Live Activity showing battery, power mode and bike state on the iPhone Lock Screen"
-                    width="720"
-                    height="1565"
+                    alt="FENR riding and charging Live Activities with battery, mode, charge target, time remaining and live charging measurements"
+                    width="1154"
+                    height="898"
                     loading="lazy"
                   />
                 </div>
-                <figcaption>The essentials, without opening the app</figcaption>
+                <figcaption>
+                  Riding and charging, on your Lock Screen
+                </figcaption>
               </figure>
             </article>
           </div>

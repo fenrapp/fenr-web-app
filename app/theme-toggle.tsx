@@ -1,26 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useColorScheme } from './use-color-scheme';
 
 export function ThemeToggle() {
-  const [dark, setDark] = useState(false);
-  useEffect(() => {
-    const system = window.matchMedia('(prefers-color-scheme: dark)');
-    const update = () =>
-      setDark(
-        document.documentElement.dataset.theme
-          ? document.documentElement.dataset.theme === 'dark'
-          : system.matches,
-      );
-    update();
-    system.addEventListener('change', update);
-    return () => system.removeEventListener('change', update);
-  }, []);
+  const dark = useColorScheme() === 'dark';
 
   function toggle() {
     const theme = dark ? 'light' : 'dark';
     document.documentElement.dataset.theme = theme;
-    setDark(!dark);
     try {
       localStorage.setItem('fenr-theme', theme);
     } catch {

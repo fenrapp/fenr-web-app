@@ -6,7 +6,29 @@ import media from '../app/optimized-media.json' with { type: 'json' };
 // Immutable caching is safe only when filenames match their actual content.
 // This check needs no encoder and can run before shipping a static export.
 const publicRoot = new URL('../public/', import.meta.url);
-const referenced = new Set([media.videoSrc]);
+assert.deepEqual(Object.keys(media.videos).sort(), ['dark', 'light']);
+const referenced = new Set(Object.values(media.videos));
+for (const name of [
+  'dashboard-riding',
+  'dashboard-charging',
+  'navigation',
+  'dashboard-cards',
+  'battery-health',
+  'battery-cells',
+  'power-modes',
+  'ride-history',
+  'maintenance',
+  'diagnostics',
+  'live-activity',
+  'fenr-ride-loop-poster',
+]) {
+  assert(media.images[`${name}-light`], `Missing light appearance: ${name}`);
+  assert(media.images[`${name}-dark`], `Missing dark appearance: ${name}`);
+  assert.notEqual(
+    media.images[`${name}-light`].src,
+    media.images[`${name}-dark`].src,
+  );
+}
 
 for (const [name, image] of Object.entries(media.images)) {
   const variants = image.srcSet.split(', ');

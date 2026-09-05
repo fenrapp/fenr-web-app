@@ -99,8 +99,12 @@ app/
 ├── companions.css       # Apple Watch and Live Activities layouts
 ├── product-tour.css     # Responsive feature cards and tour controls
 ├── product-story.tsx    # Feature content and horizontal tour
-├── motion-controller.tsx # Scroll reveals and visible-only video playback
-├── theme-toggle.tsx     # System appearance and saved light/dark choice
+├── motion-controller.tsx # Scroll reveals and compact header state
+├── hero-film.tsx        # Theme-matched, visible-only video and play/pause
+├── media-policy.ts      # Playback rules for motion and connection preferences
+├── theme-toggle.tsx     # Saved light/dark choice
+├── use-color-scheme.ts  # Shared system/manual appearance subscription
+├── app-screenshot.tsx   # Native light/dark screenshot selection
 ├── color-scheme.css     # Light/dark tokens and theme control styles
 ├── responsive-image.tsx # Static responsive WebP rendering
 ├── optimized-media.json # Generated content-fingerprinted asset registry
@@ -113,18 +117,22 @@ app/
 ├── legal.css           # Legal pages, footer links and print styles
 └── site-config.ts       # External product links
 
-public/assets/           # FENR icons, photography, WebP captures and video
+public/assets/           # FENR icons, photography, source captures and video
 public/media/            # Generated responsive files with immutable URLs
 scripts/                 # Local image generation and integrity checks
 ```
 
-The tour uses native scrolling with keyboard-accessible navigation. Scroll effects respect reduced motion, and the hero video pauses outside the viewport. Reduced motion and data-saving preferences disable automatic video playback. All app media uses synthetic simulator data.
+The tour uses native scrolling with keyboard-accessible navigation. Scroll effects respect reduced motion, and the hero video pauses outside the viewport or in a background tab. Reduced motion and data-saving preferences disable automatic video playback. All app media uses synthetic simulator data.
 
 ## 🪶 Loading and appearance
 
-Images use responsive WebP variants, reserved dimensions and lazy loading below the hero. The hero uses a single video surface with a lightweight poster, so a fallback dashboard cannot show behind playback. Autoplay is disabled for reduced motion, Save-Data and reported 2G/3G connections.
+Images use responsive WebP variants, reserved dimensions and lazy loading below the hero. Native light and dark iPhone captures follow the selected website theme. Watch screenshots retain watchOS's native black interface. The Live Activities view uses enlarged crops of actual Lock Screen panels to keep the information legible.
+
+The hero uses one video surface with a matching poster, so a fallback dashboard cannot show behind playback. Each appearance has its own silent, 10-second H.264 clip at 1280 × 588, preserving the simulator's landscape aspect ratio. Each clip is approximately 390 KB, with fast-start metadata. Its source is attached only when playback is needed. Autoplay is disabled for reduced motion, Save-Data and reported 2G/3G connections; an explicit Play button can opt in. A manual pause survives theme changes.
 
 The site initially follows the browser/system light or dark appearance. A header button switches modes and remembers only that choice locally. A tiny pre-paint script restores it without a theme flash. Styles and fonts are served locally; there are no third-party font or stylesheet requests.
+
+Themed media waits for that restored choice before requesting an image or clip, avoiding an incorrect first-frame appearance or duplicate downloads. Reserved dimensions keep the layout stable. With JavaScript disabled, static screenshots follow the system appearance.
 
 Netlify serves the static site through its CDN. Generated files in `public/media/` have content hashes and a one-year immutable browser cache. Other files keep default revalidation so new releases appear correctly.
 
@@ -134,7 +142,15 @@ After replacing source captures in `public/assets/`, install the WebP encoder (`
 node scripts/optimize-images.mjs
 ```
 
-Commit the generated `public/media/` files and `app/optimized-media.json` along with the source changes. Normal builds do not need the encoder. Original captures remain available for future exports.
+Commit the generated `public/media/` files and `app/optimized-media.json` along with the source changes. Normal builds do not need the encoder. The generator removes only obsolete generated files listed by the preceding manifest. Original captures remain available for future exports.
+
+### 📸 Refreshing app media
+
+Capture matching `-light.png` and `-dark.png` source pairs using the current FENR Debug build with synthetic data. Keep device, orientation, text size and framing identical. Use metric units and hide the unavailable simulator phone-battery readout. Do not recolor dark screenshots to simulate light mode.
+
+For video, record each actual appearance, normalize orientation, trim to 10 seconds and export silent H.264 with fast-start metadata. Save the clips as `fenr-ride-loop-light.mp4` and `fenr-ride-loop-dark.mp4`, with corresponding `fenr-ride-loop-poster-light.png` and `fenr-ride-loop-poster-dark.png`. Then regenerate and run all quality checks. Inspect both themes at desktop, tablet and phone sizes, including saved theme overrides and reduced motion.
+
+When rounding the export canvas to even H.264 dimensions, scale uniformly to fill it instead of adding letterboxing. Inspect the outermost pixel columns in the encoded clip and derive the poster from that corrected clip. Tiny black padding can be invisible in dark mode but obvious against the light interface.
 
 ## 🤝 Contributing
 
