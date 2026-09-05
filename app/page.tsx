@@ -320,7 +320,7 @@ export default function Home() {
               height="76"
               loading="lazy"
             />
-            <p className="premium-eyebrow">COMING TO TESTFLIGHT</p>
+            <p className="premium-eyebrow">JOIN THE BETA</p>
             <h2>Take the whole ride with you.</h2>
             <p>
               Dashboard, navigation, diagnostics and bike care. One focused app,

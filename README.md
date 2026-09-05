@@ -69,7 +69,7 @@ The production build is exported as a static site.
 
 ## ⚙️ Configuration
 
-Product links are centralized in [`app/site-config.ts`](./app/site-config.ts). The current TestFlight URL is temporary and can be replaced there without searching through the page.
+Product links are centralized in [`app/site-config.ts`](./app/site-config.ts). All TestFlight buttons use the public beta invitation URL configured there.
 
 ## 📄 Privacy and terms
 

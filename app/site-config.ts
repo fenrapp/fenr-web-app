@@ -7,5 +7,5 @@ interface SiteConfig {
 export const siteConfig: SiteConfig = {
   githubUrl: 'https://github.com/fenrapp',
   protocolResearchUrl: 'https://github.com/fenrapp/bike-protocol-research',
-  testFlightUrl: 'https://testflight.apple.com/join/FENRTEST',
+  testFlightUrl: 'https://testflight.apple.com/join/4SFA4tmG',
 };
