@@ -1,4 +1,5 @@
 import { ResponsiveImage } from './responsive-image';
+import Link from 'next/link';
 import { ThemeToggle } from './theme-toggle';
 import media from './optimized-media.json';
 import { MotionController } from './motion-controller';
@@ -6,6 +7,7 @@ import { ProductStory } from './product-story';
 import { siteConfig } from './site-config';
 import './companions.css';
 import './color-scheme.css';
+import './legal.css';
 
 function ArrowIcon() {
   return (
@@ -359,7 +361,17 @@ export default function Home() {
           endorsed by, sponsored by or otherwise connected to Stark Future.
           Stark and related trademarks belong to their respective owners.
         </p>
-        <span>© 2026 FENR · MIT</span>
+        <div className="footer-legal">
+          <nav aria-label="Legal links">
+            <Link href="/privacy" prefetch={false}>
+              Privacy Policy
+            </Link>
+            <Link href="/terms" prefetch={false}>
+              Terms &amp; Conditions
+            </Link>
+          </nav>
+          <span>© 2026 FENR · MIT</span>
+        </div>
       </footer>
     </>
   );

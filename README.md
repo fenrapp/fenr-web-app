@@ -15,6 +15,7 @@
 <p align="center">
   <a href="#-run-locally">Run locally</a> ·
   <a href="#-what-the-site-covers">Features</a> ·
+  <a href="#-privacy-and-terms">Privacy &amp; terms</a> ·
   <a href="https://github.com/fenrapp/bike-protocol-research">Protocol research</a>
 </p>
 
@@ -45,10 +46,10 @@ The site is intentionally simple: React, TypeScript and CSS, with no backend, an
 
 ## 🚀 Run locally
 
-You will need a current Node.js LTS release and npm.
+You will need Node.js 22.13 or newer (an LTS release is recommended) and npm.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -69,6 +70,24 @@ The production build is exported as a static site.
 
 Product links are centralized in [`app/site-config.ts`](./app/site-config.ts). The current TestFlight URL is temporary and can be replaced there without searching through the page.
 
+## 📄 Privacy and terms
+
+The website includes dedicated, statically exported legal pages linked from its footer:
+
+- **[Privacy Policy](https://fenr.to/privacy):** local bike and ride records, permissions, diagnostic logs, maps, exports, TestFlight, website hosting and data rights.
+- **[Terms & Conditions](https://fenr.to/terms):** authorized motorcycle use, supported controls, navigation and maintenance limitations, MIT licensing and Apple distribution.
+
+Both pages share a responsive document layout, a section index, light/dark appearance and print styles. They are written in English and describe the current iPhone and Apple Watch app, not hypothetical accounts or cloud services.
+
+Provider details and the last-updated date are centralized in [`app/legal-config.ts`](./app/legal-config.ts):
+
+- **Provider:** Oscar Antonio Duran Grillo
+- **Location:** Barcelona, Spain
+- **Contact:** [support@oduran.me](mailto:support@oduran.me)
+- **Last updated:** September 5, 2026
+
+When app behavior or data handling changes, review the corresponding policy text and update the document date. Keep App Store privacy disclosures and in-app legal links aligned separately; these web pages do not replace them or guarantee App Store approval.
+
 ## 🗂️ Project structure
 
 ```text
@@ -83,7 +102,12 @@ app/
 ├── responsive-image.tsx # Static responsive WebP rendering
 ├── optimized-media.json # Generated content-fingerprinted asset registry
 ├── layout.tsx           # Document metadata and favicon
-├── page.tsx             # Single page product experience
+├── page.tsx             # Product landing page and legal footer links
+├── privacy/page.tsx     # Privacy Policy at /privacy
+├── terms/page.tsx       # Terms & Conditions at /terms
+├── legal-document.tsx  # Shared legal page layout and section navigation
+├── legal-config.ts     # Provider, contact and document date
+├── legal.css           # Legal pages, footer links and print styles
 └── site-config.ts       # External product links
 
 public/assets/           # FENR icons, photography, WebP captures and video
