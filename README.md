@@ -160,6 +160,12 @@ Issues and focused pull requests are welcome. Please keep the website lightweigh
 
 FENR is built in the open so riders can inspect how telemetry is presented and how supported controls are gated. Clean room interoperability research lives in the [bike protocol research repository](https://github.com/fenrapp/bike-protocol-research).
 
+## 📜 License
+
+This repository is licensed under the [MIT License](./LICENSE).
+Copyright (c) 2026 Oscar Antonio Duran Grillo.
+Third-party dependencies retain their own licenses.
+
 ## ⚠️ Independence notice
 
 FENR is an independent, unofficial application. It is not affiliated with, endorsed by, sponsored by or otherwise connected to Stark Future. Stark and related trademarks belong to their respective owners.
