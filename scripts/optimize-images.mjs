@@ -17,6 +17,7 @@ const screens = [
     'battery-health',
     'battery-cells',
     'power-modes',
+    'advanced-curves',
     'ride-history',
     'maintenance',
     'diagnostics',

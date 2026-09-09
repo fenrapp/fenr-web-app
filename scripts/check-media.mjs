@@ -16,6 +16,7 @@ for (const name of [
   'battery-health',
   'battery-cells',
   'power-modes',
+  'advanced-curves',
   'ride-history',
   'maintenance',
   'diagnostics',

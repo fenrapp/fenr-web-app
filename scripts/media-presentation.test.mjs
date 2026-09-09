@@ -51,6 +51,7 @@ function loadComponent(name, theme, hooks = React) {
       return loadComponent('app-screenshot', theme, hooks);
     if (specifier === './optimized-media.json')
       return require('../app/optimized-media.json');
+    if (specifier === './product-tour.css') return {};
     return require(specifier);
   };
   runInNewContext(outputText, {
@@ -60,6 +61,42 @@ function loadComponent(name, theme, hooks = React) {
   });
   return loaded.exports;
 }
+
+test('advanced curves follows basic controls with themed, lazy screenshots', () => {
+  for (const theme of ['light', 'dark']) {
+    const { ProductStory } = loadComponent('product-story', theme);
+    const html = renderToStaticMarkup(React.createElement(ProductStory));
+    const cards = [
+      ...html.matchAll(
+        /<article\b[^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g,
+      ),
+    ];
+    const controlsIndex = cards.findIndex(
+      (card) => card[1] === 'showcase-controls',
+    );
+    assert(controlsIndex >= 0);
+    assert.equal(cards[controlsIndex + 1][1], 'showcase-curves');
+    assert.equal(cards[controlsIndex + 2][1], 'showcase-history');
+    const curves = cards[controlsIndex + 1][2];
+    assert.match(curves, /ADVANCED CURVES/);
+    assert.match(
+      curves,
+      /alt="FENR Advanced Power Modes showing an editable power curve by RPM"/,
+    );
+    assert.match(curves, /loading="lazy"/);
+    assert.match(curves, /width="1206" height="2622"/);
+    assert.match(curves, /advanced-curves-light-\d+-[a-f0-9]{12}\.webp/);
+    assert.match(curves, /advanced-curves-dark-\d+-[a-f0-9]{12}\.webp/);
+    assert.match(
+      curves,
+      new RegExp(`<source media="${theme === 'dark' ? 'all' : 'not all'}"`),
+    );
+    assert.match(
+      html,
+      new RegExp(`</span> / ${String(cards.length).padStart(2, '0')} <i`),
+    );
+  }
+});
 
 test('initial HTML defers themed downloads and retains a no-script fallback', () => {
   const { HeroFilm } = loadComponent('hero-film', null);

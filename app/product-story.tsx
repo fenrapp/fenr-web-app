@@ -101,6 +101,20 @@ const tourCards: readonly TourCard[] = [
   },
   {
     number: '07',
+    id: 'showcase-curves',
+    label: 'ADVANCED CURVES',
+    title: 'Fine-tune the way it feels.',
+    shortcut: 'Advanced Curves',
+    detail: 'Power / Regen / RPM curves / Local presets',
+    copy: 'Shape power delivery and regenerative braking across the RPM range. Save presets on your iPhone and apply your setup to a supported map when you’re ready.',
+    kind: 'phone',
+    alt: 'FENR Advanced Power Modes showing an editable power curve by RPM',
+    images: [
+      { src: '/assets/advanced-curves.webp', width: 1206, height: 2622 },
+    ],
+  },
+  {
+    number: '08',
     id: 'showcase-history',
     label: 'RIDE HISTORY',
     title: 'A little more from every ride.',
@@ -112,7 +126,7 @@ const tourCards: readonly TourCard[] = [
     images: [{ src: '/assets/ride-history.webp', width: 1206, height: 2622 }],
   },
   {
-    number: '08',
+    number: '09',
     id: 'showcase-maintenance',
     label: 'MAINTENANCE LOG',
     title: 'Look after the next ride.',
@@ -124,7 +138,7 @@ const tourCards: readonly TourCard[] = [
     images: [{ src: '/assets/maintenance.webp', width: 1206, height: 2622 }],
   },
   {
-    number: '09',
+    number: '10',
     id: 'showcase-telemetry',
     label: 'ADVANCED TELEMETRY',
     title: 'For the curious. And the precise.',
@@ -289,8 +303,8 @@ export function ProductStory() {
       </div>
       <div className="tour-footer">
         <p>
-          <span>{tourCards[activeIndex].number}</span> / 09 <i /> Explore the
-          app
+          <span>{tourCards[activeIndex].number}</span> /{' '}
+          {String(tourCards.length).padStart(2, '0')} <i /> Explore the app
         </p>
         <div className="tour-controls">
           <button

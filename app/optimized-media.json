@@ -64,6 +64,14 @@
       "src": "/media/power-modes-dark-720-cabd39c65b80.webp",
       "srcSet": "/media/power-modes-dark-360-502f922a4cad.webp 360w, /media/power-modes-dark-480-4a98001e5f44.webp 480w, /media/power-modes-dark-720-cabd39c65b80.webp 720w"
     },
+    "advanced-curves-light": {
+      "src": "/media/advanced-curves-light-720-81e1bde5d468.webp",
+      "srcSet": "/media/advanced-curves-light-360-10dae52a953e.webp 360w, /media/advanced-curves-light-480-e95b942c00ee.webp 480w, /media/advanced-curves-light-720-81e1bde5d468.webp 720w"
+    },
+    "advanced-curves-dark": {
+      "src": "/media/advanced-curves-dark-720-c7330ab44365.webp",
+      "srcSet": "/media/advanced-curves-dark-360-5c4718da848e.webp 360w, /media/advanced-curves-dark-480-a277aef07fba.webp 480w, /media/advanced-curves-dark-720-c7330ab44365.webp 720w"
+    },
     "ride-history-light": {
       "src": "/media/ride-history-light-720-3220068d5923.webp",
       "srcSet": "/media/ride-history-light-360-823ea0cc1517.webp 360w, /media/ride-history-light-480-204b5b1f9c74.webp 480w, /media/ride-history-light-720-3220068d5923.webp 720w"
