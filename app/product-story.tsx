@@ -6,6 +6,7 @@ import './product-tour.css';
 
 interface TourCard {
   alt: string;
+  availability?: string;
   copy: string;
   id: string;
   images: readonly { height: number; src: string; width: number }[];
@@ -13,13 +14,12 @@ interface TourCard {
   label: string;
   shortcut: string;
   detail: string;
-  number: string;
+  note?: string;
   title: string;
 }
 
 const tourCards: readonly TourCard[] = [
   {
-    number: '01',
     id: 'showcase-ride',
     label: 'LIVE DASHBOARD',
     title: 'Just you. And the ride.',
@@ -33,19 +33,30 @@ const tourCards: readonly TourCard[] = [
     ],
   },
   {
-    number: '02',
     id: 'showcase-navigation',
     label: 'COMPLETE NAVIGATION',
     title: 'Road planned. Trail remembered.',
     shortcut: 'Navigation',
     detail: 'Road / Enduro / GPX / Recording',
-    copy: 'Search, route, record, import GPX and follow enduro guidance in either direction with an always-available mini map.',
+    copy: 'Search Apple Maps, plan road routes, import GPX and record your ride. Follow enduro guidance in either direction with a mini map close at hand.',
     kind: 'landscape',
     alt: 'FENR route planning map with GPX import and ride recording',
     images: [{ src: '/assets/navigation.webp', width: 2622, height: 1206 }],
   },
   {
-    number: '03',
+    id: 'showcase-offline',
+    label: 'OFFLINE MAPS',
+    availability: 'Coming in 1.2',
+    title: 'Take the map with you.',
+    shortcut: 'Offline maps',
+    detail: 'Areas / GPX coverage / Topographic / Satellite',
+    copy: 'Download an area or coverage around a GPX route. Save topographic maps and optional satellite imagery before heading out.',
+    note: 'Search and calculated road directions still need an internet connection.',
+    kind: 'landscape',
+    alt: 'FENR downloaded map area with topographic and satellite coverage ready offline',
+    images: [{ src: '/assets/offline-maps.webp', width: 2868, height: 1320 }],
+  },
+  {
     id: 'showcase-cards',
     label: 'DYNAMIC CARDS',
     title: 'Your dashboard. Your order.',
@@ -59,13 +70,12 @@ const tourCards: readonly TourCard[] = [
     ],
   },
   {
-    number: '04',
     id: 'showcase-charge',
     label: 'CHARGING',
     title: 'Charging, without guesswork.',
     shortcut: 'Charging',
     detail: 'Charge target / Power / ETA / Temperature',
-    copy: 'Set supported power and target state of charge, then follow ETA, current and temperature in real time.',
+    copy: 'Set supported charging limits now or save them for your next connection. Follow ETA, current and temperature in real time.',
     kind: 'landscape',
     alt: 'FENR charging dashboard with power and charge target controls',
     images: [
@@ -73,7 +83,6 @@ const tourCards: readonly TourCard[] = [
     ],
   },
   {
-    number: '05',
     id: 'showcase-battery',
     label: 'BATTERY HEALTH',
     title: 'Know your battery. Cell by cell.',
@@ -88,19 +97,17 @@ const tourCards: readonly TourCard[] = [
     ],
   },
   {
-    number: '06',
     id: 'showcase-controls',
     label: 'GUARDED CONTROLS',
     title: 'Five maps. Your response.',
     shortcut: 'Controls',
-    detail: 'Power / Regen / Traction / Bike Lock',
-    copy: 'Adjust supported power, regeneration and traction values, with Bike Lock protected by optional PIN and Face ID.',
+    detail: 'Power / Regen / Traction / Regen traction / Bike Lock',
+    copy: 'Tune power, regenerative braking, traction and regen traction on supported firmware. Protect Bike Lock with an optional PIN and Face ID.',
     kind: 'phone',
     alt: 'FENR Power Modes showing five configurable base maps',
     images: [{ src: '/assets/power-modes.webp', width: 1206, height: 2622 }],
   },
   {
-    number: '07',
     id: 'showcase-curves',
     label: 'ADVANCED CURVES',
     title: 'Fine-tune the way it feels.',
@@ -114,7 +121,6 @@ const tourCards: readonly TourCard[] = [
     ],
   },
   {
-    number: '08',
     id: 'showcase-history',
     label: 'RIDE HISTORY',
     title: 'A little more from every ride.',
@@ -126,7 +132,6 @@ const tourCards: readonly TourCard[] = [
     images: [{ src: '/assets/ride-history.webp', width: 1206, height: 2622 }],
   },
   {
-    number: '09',
     id: 'showcase-maintenance',
     label: 'MAINTENANCE LOG',
     title: 'Look after the next ride.',
@@ -138,7 +143,6 @@ const tourCards: readonly TourCard[] = [
     images: [{ src: '/assets/maintenance.webp', width: 1206, height: 2622 }],
   },
   {
-    number: '10',
     id: 'showcase-telemetry',
     label: 'ADVANCED TELEMETRY',
     title: 'For the curious. And the precise.',
@@ -282,7 +286,7 @@ export function ProductStory() {
         aria-label="Scrollable FENR product tour"
         ref={railRef}
       >
-        {tourCards.map((card) => (
+        {tourCards.map((card, index) => (
           <article
             className={`tour-card tour-card-${card.kind}`}
             id={card.id}
@@ -291,19 +295,25 @@ export function ProductStory() {
           >
             <div className="tour-copy">
               <p>
-                {card.number} <span>{card.label}</span>
+                {String(index + 1).padStart(2, '0')} <span>{card.label}</span>
               </p>
+              {card.availability && (
+                <span className="tour-availability">{card.availability}</span>
+              )}
               <h3 id={`${card.id}-title`}>{card.title}</h3>
               <div>{card.copy}</div>
             </div>
             <TourVisual card={card} />
-            <p className="tour-detail">{card.detail}</p>
+            <p className="tour-detail">
+              {card.detail}
+              {card.note && <span className="tour-note">{card.note}</span>}
+            </p>
           </article>
         ))}
       </div>
       <div className="tour-footer">
         <p>
-          <span>{tourCards[activeIndex].number}</span> /{' '}
+          <span>{String(activeIndex + 1).padStart(2, '0')}</span> /{' '}
           {String(tourCards.length).padStart(2, '0')} <i /> Explore the app
         </p>
         <div className="tour-controls">

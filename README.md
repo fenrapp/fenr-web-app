@@ -42,7 +42,7 @@ npm run build
 ## 🛠️ Working on the site
 
 - **Content and styles:** [`app/`](./app/).
-- **TestFlight and product links:** [`app/site-config.ts`](./app/site-config.ts).
+- **App Store and product links:** [`app/site-config.ts`](./app/site-config.ts).
 - **Media:** originals in [`public/assets/`](./public/assets/), optimized files in [`public/media/`](./public/media/).
 
 Use real light/dark app captures with synthetic data. After replacing images, regenerate the optimized files with `cwebp` installed (`brew install webp` on macOS):

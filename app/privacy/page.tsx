@@ -338,9 +338,9 @@ const sections: readonly LegalSection[] = [
           in the browser cache until it expires or you clear it.
         </p>
         <p>
-          Links to TestFlight, GitHub and other sites take you to services with
-          their own privacy practices. They are not embedded trackers on this
-          page.
+          Links to the App Store, GitHub and other sites take you to services
+          with their own privacy practices. They are not embedded trackers on
+          this page.
         </p>
       </>
     ),

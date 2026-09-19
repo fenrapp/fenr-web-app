@@ -11,6 +11,7 @@ const screens = [
   ['dashboard-riding', 'png', [640, 1280, 2622]],
   ['dashboard-charging', 'png', [640, 1280, 2622]],
   ['navigation', 'png', [640, 1280, 2622]],
+  ['offline-maps', 'png', [640, 1280, 2868]],
   ['live-activity', 'png', [480, 720, 1154]],
   ...[
     'dashboard-cards',

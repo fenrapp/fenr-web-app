@@ -1,11 +1,11 @@
 interface SiteConfig {
   githubUrl: string;
   protocolResearchUrl: string;
-  testFlightUrl: string;
+  appStoreUrl: string;
 }
 
 export const siteConfig: SiteConfig = {
   githubUrl: 'https://github.com/fenrapp',
   protocolResearchUrl: 'https://github.com/fenrapp/bike-protocol-research',
-  testFlightUrl: 'https://testflight.apple.com/join/4SFA4tmG',
+  appStoreUrl: 'https://apps.apple.com/app/id6808795194',
 };

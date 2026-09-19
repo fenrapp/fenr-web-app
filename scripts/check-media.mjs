@@ -12,6 +12,7 @@ for (const name of [
   'dashboard-riding',
   'dashboard-charging',
   'navigation',
+  'offline-maps',
   'dashboard-cards',
   'battery-health',
   'battery-cells',

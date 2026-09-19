@@ -47,9 +47,8 @@ const sections: readonly LegalSection[] = [
           telemetry, battery and charging information, navigation and GPX import
           or export, ride recording and history, maintenance records,
           diagnostics and supported bike controls. The Apple Watch app provides
-          compact telemetry through its own direct Bluetooth connection. Live
-          Activities can display selected bike information outside the iPhone
-          app.
+          compact telemetry relayed by the paired iPhone. Live Activities can
+          display selected bike information outside the iPhone app.
         </p>
         <p>
           Availability depends on the motorcycle, reported firmware,

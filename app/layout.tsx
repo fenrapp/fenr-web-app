@@ -4,7 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'FENR | Connected riding for Stark electric motorcycles',
   description:
-    'Live telemetry, battery insight and guarded controls for compatible Stark electric motorcycles.',
+    'Live telemetry, road and trail navigation, advanced curves and battery insight for compatible Stark electric motorcycles. For iPhone and Apple Watch.',
   icons: {
     icon: '/assets/favicon-rounded.png',
   },

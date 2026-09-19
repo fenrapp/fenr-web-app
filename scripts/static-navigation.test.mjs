@@ -12,6 +12,34 @@ const cases = [
   ['app/terms/page.tsx', ['/privacy']],
 ];
 
+test('all download CTAs use the verified centralized App Store URL', async () => {
+  const config = readFileSync(
+    new URL('../app/site-config.ts', import.meta.url),
+    'utf8',
+  );
+  const { outputText } = ts.transpileModule(config, {
+    compilerOptions: { module: ts.ModuleKind.ESNext },
+  });
+  const { siteConfig } = await import(
+    `data:text/javascript,${encodeURIComponent(outputText)}`
+  );
+  assert.equal(
+    siteConfig.appStoreUrl,
+    'https://apps.apple.com/app/id6808795194',
+  );
+
+  const page = readFileSync(
+    new URL('../app/page.tsx', import.meta.url),
+    'utf8',
+  );
+  assert.equal(
+    [...page.matchAll(/href=\{siteConfig\.appStoreUrl\}/g)].length,
+    3,
+  );
+  assert.doesNotMatch(page, /testflight|join the beta/i);
+  assert.doesNotMatch(page, /https:\/\/apps\.apple\.com/);
+});
+
 for (const [file, expectedRoutes] of cases) {
   test(`${file} uses native links for cross-page navigation`, () => {
     const source = ts.createSourceFile(

@@ -24,6 +24,14 @@
       "src": "/media/navigation-dark-2622-d4dd777daf81.webp",
       "srcSet": "/media/navigation-dark-640-ef0e125d5166.webp 640w, /media/navigation-dark-1280-4049ae7be248.webp 1280w, /media/navigation-dark-2622-d4dd777daf81.webp 2622w"
     },
+    "offline-maps-light": {
+      "src": "/media/offline-maps-light-2868-735de49df501.webp",
+      "srcSet": "/media/offline-maps-light-640-3c34dfba5c7e.webp 640w, /media/offline-maps-light-1280-0e5c2a7ecdf0.webp 1280w, /media/offline-maps-light-2868-735de49df501.webp 2868w"
+    },
+    "offline-maps-dark": {
+      "src": "/media/offline-maps-dark-2868-d751569e8ddc.webp",
+      "srcSet": "/media/offline-maps-dark-640-2672091d5bc6.webp 640w, /media/offline-maps-dark-1280-f502f25f3ee1.webp 1280w, /media/offline-maps-dark-2868-d751569e8ddc.webp 2868w"
+    },
     "live-activity-light": {
       "src": "/media/live-activity-light-1154-9955554bea33.webp",
       "srcSet": "/media/live-activity-light-480-804b473abfa4.webp 480w, /media/live-activity-light-720-f650f2de4325.webp 720w, /media/live-activity-light-1154-9955554bea33.webp 1154w"
@@ -97,8 +105,8 @@
       "srcSet": "/media/diagnostics-dark-360-c263bd4b6e5a.webp 360w, /media/diagnostics-dark-480-c33a519be43c.webp 480w, /media/diagnostics-dark-720-754c04478f92.webp 720w"
     },
     "watch-charging": {
-      "src": "/media/watch-charging-416-21277e3b8188.webp",
-      "srcSet": "/media/watch-charging-256-a6e220c80ec0.webp 256w, /media/watch-charging-416-21277e3b8188.webp 416w"
+      "src": "/media/watch-charging-416-0498190a3541.webp",
+      "srcSet": "/media/watch-charging-256-295f9158af97.webp 256w, /media/watch-charging-416-0498190a3541.webp 416w"
     },
     "fenr-icon-light": {
       "src": "/media/fenr-icon-light-256-8c38d976d4fb.webp",
