@@ -136,6 +136,22 @@
   max-width: 12ch;
   text-wrap: balance;
 }
+.tour-availability {
+  color: #ffb36e;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.tour-note {
+  display: block;
+  font-size: 14px;
+  letter-spacing: normal;
+  margin-top: 8px;
+  max-width: 62ch;
+}
 .tour-copy > div {
   color: #b5beb7;
   font-size: 16px;

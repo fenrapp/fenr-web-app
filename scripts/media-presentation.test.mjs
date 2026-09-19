@@ -95,6 +95,43 @@ test('advanced curves follows basic controls with themed, lazy screenshots', () 
       html,
       new RegExp(`</span> / ${String(cards.length).padStart(2, '0')} <i`),
     );
+    cards.forEach((card, index) => {
+      assert.match(
+        card[2],
+        new RegExp(`<p>${String(index + 1).padStart(2, '0')} <span>`),
+      );
+    });
+  }
+});
+
+test('offline maps follows navigation with availability, limits and themed media', () => {
+  for (const theme of ['light', 'dark']) {
+    const { ProductStory } = loadComponent('product-story', theme);
+    const html = renderToStaticMarkup(React.createElement(ProductStory));
+    const cards = [
+      ...html.matchAll(
+        /<article\b[^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g,
+      ),
+    ];
+    const navigationIndex = cards.findIndex(
+      (card) => card[1] === 'showcase-navigation',
+    );
+    assert(navigationIndex >= 0);
+    const offline = cards[navigationIndex + 1];
+    assert.equal(offline[1], 'showcase-offline');
+    assert.match(offline[2], /Coming in 1\.2/);
+    assert.match(
+      offline[2],
+      /Search and calculated road directions still need an internet connection\./,
+    );
+    assert.match(offline[2], /loading="lazy"/);
+    assert.match(offline[2], /width="2868" height="1320"/);
+    assert.match(offline[2], /offline-maps-light-\d+-[a-f0-9]{12}\.webp/);
+    assert.match(offline[2], /offline-maps-dark-\d+-[a-f0-9]{12}\.webp/);
+    assert.match(
+      offline[2],
+      new RegExp(`<source media="${theme === 'dark' ? 'all' : 'not all'}"`),
+    );
   }
 });
 

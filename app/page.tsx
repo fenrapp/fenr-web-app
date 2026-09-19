@@ -52,12 +52,12 @@ export default function Home() {
             <ThemeToggle />
             <a
               className="premium-header-cta"
-              href={siteConfig.testFlightUrl}
-              aria-label="Join TestFlight"
+              href={siteConfig.appStoreUrl}
+              aria-label="Download FENR on the App Store"
             >
-              <span className="premium-header-label-full">Join TestFlight</span>
+              <span className="premium-header-label-full">App Store</span>
               <span className="premium-header-label-compact" aria-hidden="true">
-                Join
+                Get app
               </span>
               <ArrowIcon />
             </a>
@@ -80,15 +80,12 @@ export default function Home() {
               Clearly connected.
             </h1>
             <p className="premium-hero-intro">
-              Live telemetry, complete navigation and guarded controls for
+              Live telemetry, road and trail navigation and guarded controls for
               compatible Stark electric motorcycles. Open source, by design.
             </p>
             <div className="premium-hero-actions">
-              <a
-                className="premium-primary-cta"
-                href={siteConfig.testFlightUrl}
-              >
-                Join TestFlight
+              <a className="premium-primary-cta" href={siteConfig.appStoreUrl}>
+                Download on the App Store
                 <ArrowIcon />
               </a>
               <a className="premium-text-link" href="#product">
@@ -169,12 +166,12 @@ export default function Home() {
                   On your wrist.
                 </h3>
                 <p>
-                  Ride and charging telemetry, connected directly to your bike
-                  over Bluetooth. A quick look at what matters, without an
-                  iPhone relay.
+                  Ride and charging telemetry from your paired iPhone. Keep your
+                  iPhone connected to the bike and glance at battery, riding
+                  mode and charge progress on your wrist.
                 </p>
                 <ul>
-                  <li>Direct Bluetooth connection</li>
+                  <li>Updates from your paired iPhone</li>
                   <li>Ride and charge dashboards</li>
                   <li>Compact, read-only telemetry</li>
                 </ul>
@@ -191,7 +188,7 @@ export default function Home() {
                   />
                 </div>
                 <figcaption>
-                  <span /> Connected directly to the bike
+                  <span /> Bike data, shared by your iPhone
                 </figcaption>
               </figure>
             </article>
@@ -278,8 +275,8 @@ export default function Home() {
               <span>02</span>
               <h3>Serialized by design</h3>
               <p>
-                Writes stay ordered, begin with safe no-op checks and preserve
-                every related value.
+                Vehicle changes are applied one at a time, with safeguards for
+                supported firmware and related settings.
               </p>
             </article>
             <article data-reveal>
@@ -301,7 +298,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="premium-final-cta" id="testflight">
+        <section className="premium-final-cta" id="download">
           <div className="premium-final-background" aria-hidden="true">
             <ResponsiveImage
               src="/assets/trail.jpg"
@@ -320,14 +317,14 @@ export default function Home() {
               height="76"
               loading="lazy"
             />
-            <p className="premium-eyebrow">JOIN THE BETA</p>
+            <p className="premium-eyebrow">AVAILABLE ON THE APP STORE</p>
             <h2>Take the whole ride with you.</h2>
             <p>
-              Dashboard, navigation, diagnostics and bike care. One focused app,
-              built in the open.
+              Try the built-in demo with no account or motorcycle. Connect your
+              compatible Stark when you are ready to ride.
             </p>
-            <a className="premium-final-button" href={siteConfig.testFlightUrl}>
-              Join TestFlight
+            <a className="premium-final-button" href={siteConfig.appStoreUrl}>
+              Download on the App Store
               <ArrowIcon />
             </a>
             <small>For compatible Stark electric motorcycles</small>
