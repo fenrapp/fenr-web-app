@@ -88,7 +88,7 @@ const sections: readonly LegalSection[] = [
     content: (
       <>
         <p>
-          <strong>Bluetooth</strong> connects the iPhone or Watch directly to
+          <strong>Bluetooth</strong> connects the iPhone directly to
           the motorcycle. Supported Bluetooth work may continue in the
           background. Denying or revoking access prevents connected bike
           features from working.
@@ -118,9 +118,9 @@ const sections: readonly LegalSection[] = [
           through system settings.
         </p>
         <p>
-          The Watch has its own direct Bluetooth connection and local profile
-          and settings. It does not depend on an iPhone relay for its live
-          telemetry.
+          The Watch receives read-only bike snapshots from the paired iPhone
+          through Apple WatchConnectivity. The iPhone owns the motorcycle
+          connection; the Watch does not connect to the motorcycle directly.
         </p>
       </>
     ),
@@ -139,6 +139,27 @@ const sections: readonly LegalSection[] = [
             Apple Maps &amp; Privacy
           </a>
           .
+        </p>
+        <p>
+          FENR also uses Mapbox to display maps when you select the Offline
+          source and to download areas for offline use. Map requests send the
+          requested map area, style and technical connection information to
+          Mapbox. Downloaded map regions and their names are stored on your
+          device. Mapbox may receive de-identified location and usage data
+          through its SDK. The information control on a Mapbox map provides
+          attribution and access to Mapbox telemetry preferences. See{' '}
+          <a href="https://www.mapbox.com/legal/privacy">
+            Mapbox&apos;s Privacy Policy
+          </a>
+          . Offline map selection does not disable network access: missing map
+          resources can still be requested while your device is online.
+        </p>
+        <p>
+          Downloaded areas remain until you remove them in Offline maps or
+          delete the app&apos;s data. Removing a downloaded area keeps its GPX
+          route. Shared map resources may be reclaimed later, so removing an
+          area may not immediately free all of its reported storage. Map
+          downloads are excluded from device backups.
         </p>
         <p>
           When you choose to import a supported shared map link, FENR may
@@ -227,7 +248,7 @@ const sections: readonly LegalSection[] = [
             credential is erased.
           </li>
           <li>
-            Except for diagnostic logs marked as excluded, local data may be
+            Except for diagnostic logs and map downloads marked as excluded, local data may be
             included in operating-system backups according to your settings.
             Backup copies are managed through Apple or your chosen backup
             provider, not a FENR sync service.
@@ -269,8 +290,8 @@ const sections: readonly LegalSection[] = [
         <p>
           Apple may also process App Store and system diagnostic information
           under its own settings and policies. FENR itself has no advertising
-          SDK, cross-app tracking, third-party analytics SDK or sale of personal
-          data.
+          SDK, cross-app advertising tracking or sale of personal data.
+          Mapbox SDK telemetry is described in the maps section above.
         </p>
         <p>
           When you email support, we receive your email address, message and
@@ -349,7 +370,7 @@ const sections: readonly LegalSection[] = [
           choose for exports and, where necessary, service providers handling
           support or hosting on our behalf. We may disclose information when
           legally required or necessary to establish or defend a legal claim.
-          Apple and Google also process information under their own service
+          Apple, Google and Mapbox also process information under their own service
           policies.
         </p>
         <p>
@@ -440,6 +461,8 @@ export default function PrivacyPage() {
       title="Privacy Policy"
       introduction="Your bike data is primarily kept on your devices. Here is what FENR processes, when other services are involved and how you stay in control."
       sections={sections}
+      updated="September 19, 2026"
+      updatedISO="2026-09-19"
     />
   );
 }

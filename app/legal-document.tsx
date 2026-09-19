@@ -16,10 +16,14 @@ export function LegalDocument({
   title,
   introduction,
   sections,
+  updated = legalConfig.updated,
+  updatedISO = legalConfig.updatedISO,
 }: {
   title: string;
   introduction: string;
   sections: readonly LegalSection[];
+  updated?: string;
+  updatedISO?: string;
 }) {
   return (
     <div className="legal-page">
@@ -50,7 +54,7 @@ export function LegalDocument({
           <p>{introduction}</p>
           <p className="legal-date">
             Last updated:{' '}
-            <time dateTime={legalConfig.updatedISO}>{legalConfig.updated}</time>
+            <time dateTime={updatedISO}>{updated}</time>
           </p>
         </div>
         <div className="legal-layout">
